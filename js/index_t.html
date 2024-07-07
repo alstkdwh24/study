@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="apple" value="홍길동">
+    <input type="text" class="melon" value="이순신">
+    <script src="jquery-3.7.1.min.js"></script> 
+    <script>
+        const a= document.getElementById("apple").value;
+        const b=$("#apple").val("나나오");
+
+        console.log(a, b);
+        console.log($("#apple"))
+        console.log($("#apple")[0])
+        console.log($("#apple")[0].value)
+
+
+
+        var c=document.querySelector(".melon").value;
+        let d=$(".melon").val();
+
+        document.querySelector(".melon").value="이순신"
+
+
+        d=$(".melon").val("홍길자")
+        console.log(d);
+    </script> 
+</body>
+</html>

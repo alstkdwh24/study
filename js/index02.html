@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>attr험수</h3>
+
+    <img src="#" art="이미지1" class="test" id="test">
+    <img src="#" art="이미지2" class="test3">
+    <script src="jquery-3.7.1.min.js"></script>  
+
+    <script>
+        var a=document.querySelector(".test").src;
+        console.log(a);
+
+        let b=$(".test").attr("id");
+        console.log(b);
+    </script>
+</body>
+</html>
