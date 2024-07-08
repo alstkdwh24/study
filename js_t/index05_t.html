@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <style>
+        .myBtn {
+            color: red;
+        }
+    </style>
+    <button id="btn" class="btn-btn-default">클래스 제어하기</button>
+    <script src="jquery-3.7.1.min.js"></script>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var a = document.getElementById("btn");
+            a.onclick = function () {
+                this.classList.add("myBtn");
+                this.onclick = function () {
+                    this.classList.remove("myBtn");
+            }
+            
+            };
+        
+
+
+            console.log(a)
+        });
+    </script>
+    <button id="toggle" class="red">토글 클래스</button>
+
+    <script>
+        $("#toggle").click(function () {
+            console.log(this);
+            console.log(event.target);
+            $(this).toggleClass("myBtn")
+            $(event.target).toggleClass("myBtn")
+            $("#toggle").toggleClass("myBtn")
+        })
+
+
+    </script>
+</body>
+
+</html>

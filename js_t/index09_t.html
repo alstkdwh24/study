@@ -1,0 +1,27 @@
+<script>
+    $("#btn1").click(function(){
+        if($("#btn1").hasClass("dark")){
+            $("body").css("backgroundColor","black");
+            $("p, h2").css("color", "white");
+        }else{
+
+            
+        }
+        $("#btn1").toggleClass("dark");
+    });
+
+    //이름보기 토글
+    $("#btn2").click(function(){
+        if($("#btn2").hasClass("name")){
+            $(".inner > p").html("엄준식");
+            $(".inner > a").css("display","none");
+        }else{
+            $(".inner > p").html("aaaaaaa");
+            $(".inner > a").css("display","inline");
+        }
+
+        $("#btn2").toggleClass("name");
+    })
+
+
+</script>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="jquery-3.7.1.min.js"></script>
+    <script>
+        $(".btn").click(function () {
+            console.log(event.target);
+            console.log($(event.target).closest("tr"));
+            //나랑 가장 가까이에 있는 부모
+            console.log($(event.target).closest(".xxx"));
+            //제이쿼리 함수를 적용했을땨, 다시 제이쿼리를 적용할 수 있는 쿼리
+            console.log($(event.target).closest("tr").siblings); //모든 형제들
+            console.log($(event.target).closest("tr").prev());//tr의 이전 형제
+            console.log($(event.target).closest("tr").next()); //tr의 다음 형제
+
+            console.log($(event.target).closest("tr").children());
+            console.log($(event.target).closest("tr").children().first());//tr의 자식들중에 첫째
+
+            console.log($(event.target).closest("tr").children().last()); //tr의 자식들중 막내
+            console.log($(event.target).closest("tr").find(".test"))//tr의 자식중, test룰 버로찾음
+
+
+            //버튼을 누르면 "테스트2"의 html내용을 바꾸기
+            $(event.target).parent().next().children().last().html("값변경");
+
+        });
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="jquery-3.7.1.min.js"></script>
+    <p class="title"></p>
+
+    <script>
+        $(document).ready(function(){
+            //ajax
+            $.ajax({
+                type:"get",
+                url : "http://localhost:9411/getData?id=홍길동&age=20",
+                success: function(data){
+                    console.log(data);
+                    $(".title").html(data);
+                },
+                error: function(err,status){
+                    console.log(err);
+                    console.log(status);
+                }
+            });
+            $.ajax({
+                type:"post",
+                url: "http://localhost:9411/getJSON",
+                data: JSON.stringify({name:"홍길동",age:30}),
+                contentType:"application/json",
+                dataType:"",
+                success:function(data){
+                    console.log(data);
+                },
+                error:function(err,status){
+                    console.log(err);
+                    console.log(status);
+                }
+            })
+        })
+
+
+
+
+    </script>
+
+
+</body>
+</html>

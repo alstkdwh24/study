@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="jquery-3.7.1.min.js"></script>
+
+    <p class="title"></p>
+
+    <script>
+        //화면 로드후에 서버에서 데이터 로드
+        $(document).ready(function () {
+            //ajax
+            // $.ajax({
+            //     type: "get", //요청형식
+            //     url: "http://localhost:9411/getData?id=홍길동&age=20", //요청주소 데이터
+            //     success: function (data) {
+            //         //요청성공시 실행시킬 콜백
+            //         console.log(data)
+            //         $(".title").html(data); 
+            //         //여러분의 JS능력애 따라 여기서 프로그램 코드를 처리
+            //     },
+            //     error: function (err, status) {
+            //         //요청에러시 실행시킬 콜백
+
+            //         console.log(err);
+            //         console.log(status);
+            //     }
+
+
+            // });
+
+            //POST방식
+            $.ajax({
+                type: "post", //요청타입
+                url: "http://localhost:9411/getJSON",//요청주소
+                data: JSON.stringify({name: "홍길동" , age: 30}),//보내는 데이터
+                contentType:"application/json", //내가 보내는 타입
+                dataType:"", //서버로 요첳하는 데이터에 대한 타입 
+                success:function(data){
+                    console.log(data);
+                },
+                error : function(err,status){
+                    console.log(err);
+                    console.log(status);
+                }
+            })
+        })
+
+
+    </script>
+
+
+
+</body>
+
+</html>

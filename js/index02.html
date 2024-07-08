@@ -8,8 +8,8 @@
 <body>
     <h3>attr험수</h3>
 
-    <img src="#" art="이미지1" class="test" id="test">
-    <img src="#" art="이미지2" class="test3">
+    <img src="#" alt="이미지1" class="test" id="test">
+    <img src="#" alt="이미지2" class="test3">
     <script src="jquery-3.7.1.min.js"></script>  
 
     <script>
@@ -17,7 +17,22 @@
         console.log(a);
 
         let b=$(".test").attr("id");
+       
+
         console.log(b);
+        //매개변수를 2개 주면, 값을 바꿉니다.
+        $(".test").attr("alt","값 바꾸기");
+
+        //두번째 매개변수에 객체를 주면, 한번에 값을 변경가능
+        $(".test").attr({
+            alt:"바꿈",
+            src:"profile.png",
+            width:"200",
+            height:"200"
+        })
+
+        $(".test2").removeAttr("height");
+
     </script>
 </body>
 </html>

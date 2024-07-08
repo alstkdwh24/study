@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<style>
+    .myBtn{
+        color:red;
+    }
+</style>
+
+
+
+    <button id="btn" class="btn-btn-default">쿨래스 제어하기</button>
+    <script src="jquery-3.7.1.min.js"></script>  
+
+    <script>
+        // document.getElementById("btn").classList.add("myBtn");
+        // document.getElementById("btn").classList.remove("myBtn")
+
+
+        $("#btn").addClass("myBtn");
+        $("#btn").removeClass("myBtn");
+       const a= $("#btn").hasClass("myBtn"); //있으면 true없으면 false
+        console.log(a)
+    </script>
+    <button id="toggle" class="red">토글 클래스</button>
+
+
+
+    <script>
+
+        $("#toggle").click(function(){
+            console.log(this);
+            console.log(event.target);
+            $(this) .toggleClass("myBtn")  //제이쿼리를 이 태그애 적용하고 싶을땨
+            $(event.target).toggleClass("myBtn")   //제이쿼리를 이 태그애 적용하고 싶을땨
+            $("#toggle") .toggleClass("myBtn")  //제이쿼리를 이 태그애 적용하고 싶을땨
+        })
+
+    </script>
+
+</body>
+</html>
